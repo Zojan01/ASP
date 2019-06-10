@@ -8,7 +8,7 @@
             </template>
             <el-menu-item-group title="Opciones">
                 <el-menu-item v-for="child, c in item.children" :index="(i.toString() + c)" @click="redirect(child.path)">
-                    <i :class="'fa fa-' + child.icon"></i> <span>{{ child.text }}</span>
+                    <i :class="'fa fa- ' + child.icon"></i> <span>{{ child.text }}</span>
                 </el-menu-item>
             </el-menu-item-group>    
         </el-submenu>
@@ -27,10 +27,16 @@ export default {
     items: [
       { icon: "dashboard", text: "Dashboard", path: "/" },
       {
-        icon: "star",
-        text: "Ejemplo",
-        children: [{ icon: "list", text: "Listar", path: "/example" }]
+        icon: "user",
+        text: "Studiante",
+        children: [
+          
+          { icon: "plus", text: "Agregar", path: "/students/add" },
+          { icon: "add", text: "Listar", path: "/students" }
+
+        ]
       },
+      
       {
         icon: "wrench",
         text: "Configuración",
